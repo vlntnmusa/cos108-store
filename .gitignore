@@ -1,0 +1,19 @@
+# Dependencies
+frontend/node_modules/
+backend/venv/
+
+# Environment files (NEVER commit these)
+backend/.env
+frontend/.env
+
+# Python
+__pycache__/
+*.pyc
+backend/instance/
+backend/*.db
+
+# macOS
+.DS_Store
+
+# Vite
+frontend/dist/

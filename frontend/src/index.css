@@ -1,0 +1,172 @@
+/* ── Design Tokens — Dieter Rams × Apple ─────────────────────────────────── */
+:root {
+  --bg:          #F5F5F7;
+  --surface:     #FFFFFF;
+  --surface-2:   #FBFBFD;
+  --border:      #D2D2D7;
+  --border-light:#E5E5EA;
+  --text-1:      #1D1D1F;
+  --text-2:      #6E6E73;
+  --text-3:      #AEAEB2;
+  --accent:      #0071E3;
+  --accent-h:    #0077ED;
+  --success:     #34C759;
+  --danger:      #FF3B30;
+  --warn:        #FF9500;
+  --radius-sm:   8px;
+  --radius:      12px;
+  --radius-lg:   18px;
+  --shadow-sm:   0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow:      0 4px 16px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+  --shadow-lg:   0 12px 40px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06);
+  --ease:        cubic-bezier(.25,.46,.45,.94);
+  --transition:  0.2s var(--ease);
+}
+
+/* ── Reset ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  background: var(--bg);
+  color: var(--text-1);
+  font-size: 15px;
+  line-height: 1.5;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font-family: inherit; }
+input, select, textarea { font-family: inherit; }
+
+/* ── Typography ──────────────────────────────────────────────────────────── */
+.t-display { font-size: 40px; font-weight: 700; letter-spacing: -0.5px; line-height: 1.1; }
+.t-title   { font-size: 24px; font-weight: 600; letter-spacing: -0.3px; line-height: 1.2; }
+.t-headline{ font-size: 18px; font-weight: 600; letter-spacing: -0.1px; }
+.t-body    { font-size: 15px; font-weight: 400; }
+.t-caption { font-size: 13px; color: var(--text-2); }
+.t-label   { font-size: 12px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--text-2); }
+.t-mono    { font-family: 'SF Mono', 'Fira Code', monospace; }
+
+/* ── Layout ──────────────────────────────────────────────────────────────── */
+.page { max-width: 1120px; margin: 0 auto; padding: 48px 24px; }
+.page-sm { max-width: 640px; margin: 0 auto; padding: 48px 24px; }
+
+/* ── Surface / Card ──────────────────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+}
+.card-hover {
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 10px 20px; border-radius: var(--radius-sm);
+  border: none; font-size: 14px; font-weight: 500;
+  transition: all var(--transition);
+  white-space: nowrap; user-select: none;
+}
+.btn:active { transform: scale(0.98); }
+.btn-primary  { background: var(--accent); color: #fff; }
+.btn-primary:hover  { background: var(--accent-h); }
+.btn-danger   { background: var(--danger); color: #fff; }
+.btn-danger:hover   { opacity: .88; }
+.btn-success  { background: var(--success); color: #fff; }
+.btn-ghost    { background: transparent; color: var(--text-1); }
+.btn-ghost:hover    { background: var(--border-light); }
+.btn-outline  {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-1);
+}
+.btn-outline:hover { border-color: var(--text-2); }
+.btn-sm { padding: 6px 14px; font-size: 13px; border-radius: 7px; }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+
+/* ── Form elements ───────────────────────────────────────────────────────── */
+.input {
+  width: 100%; padding: 10px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 15px; color: var(--text-1);
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0,113,227,.12);
+}
+.input::placeholder { color: var(--text-3); }
+.label {
+  display: block; font-size: 13px; font-weight: 500;
+  color: var(--text-2); margin-bottom: 6px;
+}
+.form-group { margin-bottom: 16px; }
+
+/* ── Badge / Tag ─────────────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex; align-items: center;
+  padding: 3px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 500; letter-spacing: .02em;
+}
+.badge-admin    { background: #FFF3E0; color: #E65100; }
+.badge-cashier  { background: #E3F2FD; color: #1565C0; }
+.badge-customer { background: #E8F5E9; color: #2E7D32; }
+.badge-success  { background: #E8F5E9; color: #2E7D32; }
+
+/* ── Divider ─────────────────────────────────────────────────────────────── */
+.divider { height: 1px; background: var(--border-light); margin: 24px 0; }
+
+/* ── Fade-in animation ───────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.4s var(--ease) both; }
+.fade-up-2 { animation: fadeUp 0.4s 0.08s var(--ease) both; }
+.fade-up-3 { animation: fadeUp 0.4s 0.16s var(--ease) both; }
+
+/* ── Tab bar ─────────────────────────────────────────────────────────────── */
+.tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border-light); margin-bottom: 32px; }
+.tab-btn {
+  background: none; border: none; border-bottom: 2px solid transparent;
+  padding: 10px 18px; font-size: 14px; font-weight: 500;
+  color: var(--text-2); cursor: pointer; margin-bottom: -1px;
+  transition: color var(--transition), border-color var(--transition);
+}
+.tab-btn:hover { color: var(--text-1); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ── Search bar ──────────────────────────────────────────────────────────── */
+.search-wrap {
+  position: relative; margin-bottom: 32px;
+}
+.search-wrap svg {
+  position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  color: var(--text-3); pointer-events: none;
+}
+.search-wrap .input { padding-left: 40px; background: var(--surface); }
+
+/* ── Product grid ────────────────────────────────────────────────────────── */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* ── Empty state ─────────────────────────────────────────────────────────── */
+.empty {
+  text-align: center; padding: 80px 24px;
+  color: var(--text-2);
+}
+.empty-icon { font-size: 48px; margin-bottom: 16px; opacity: .4; }
