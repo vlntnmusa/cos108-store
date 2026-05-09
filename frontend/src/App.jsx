@@ -17,7 +17,6 @@ function useCart() {
     try { return JSON.parse(localStorage.getItem('cart') || '[]') } catch { return [] }
   })
   useEffect(() => { localStorage.setItem('cart', JSON.stringify(cart)) }, [cart])
-
   const addToCart = (product) => {
     setCart(prev => {
       const existing = prev.find(i => i.id === product.id)
@@ -26,9 +25,8 @@ function useCart() {
     })
   }
   const removeFromCart = (id) => setCart(prev => prev.filter(i => i.id !== id))
-  const updateQty      = (id, qty) => setCart(prev => prev.map(i => i.id === id ? { ...i, qty } : i))
-  const clearCart      = () => setCart([])
-
+  const updateQty = (id, qty) => setCart(prev => prev.map(i => i.id === id ? { ...i, qty } : i))
+  const clearCart = () => setCart([])
   return { cart, addToCart, removeFromCart, updateQty, clearCart }
 }
 
@@ -44,7 +42,6 @@ function useDarkMode() {
 export default function App() {
   const { cart, addToCart, removeFromCart, updateQty, clearCart } = useCart()
   const [darkMode, toggleDark] = useDarkMode()
-
   return (
     <AuthProvider>
       <BrowserRouter>
