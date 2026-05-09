@@ -5,6 +5,14 @@ A full-stack e-commerce web application built with React and Flask.
 ## Screenshot
 ![COS108 Store](./screenshot.png)
 
+## Lighthouse Scores
+| Metric | Score |
+|--------|-------|
+| Performance | 100 |
+| Accessibility | 88 |
+| Best Practices | 77 |
+| SEO | 100 |
+
 ## Live URLs
 - **Frontend:** https://cos108-store.vercel.app
 - **Backend API:** https://vlntnmusa.pythonanywhere.com
