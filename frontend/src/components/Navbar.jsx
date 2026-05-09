@@ -41,12 +41,25 @@ export default function Navbar({ cartCount, darkMode, toggleDark }) {
           {user?.role === 'admin' && navLink('/admin', 'Admin')}
         </nav>
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          <button onClick={toggleDark} style={{
-            background: 'none', border: 'none', cursor: 'pointer',
-            fontSize: 18, padding: 4, display: 'flex', alignItems: 'center',
-          }} title={darkMode ? 'Light mode' : 'Dark mode'}>
-            {darkMode ? '☀️' : '🌙'}
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+  <span style={{ fontSize: 13, color: 'var(--text-2)' }}>Dark mode</span>
+  <button onClick={toggleDark} aria-label="Toggle dark mode" style={{
+    width: 44, height: 26, borderRadius: 13,
+    background: darkMode ? 'var(--accent)' : 'var(--border)',
+    border: 'none', cursor: 'pointer', position: 'relative',
+    transition: 'background 0.25s',
+    flexShrink: 0,
+  }}>
+    <div style={{
+      position: 'absolute', top: 3,
+      left: darkMode ? 21 : 3,
+      width: 20, height: 20, borderRadius: '50%',
+      background: '#fff',
+      transition: 'left 0.25s',
+      boxShadow: '0 1px 3px rgba(0,0,0,.2)',
+    }} />
+  </button>
+</div>
           <Link to="/cart" style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 14, fontWeight: 500, color: 'var(--text-1)' }}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
               <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
