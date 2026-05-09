@@ -203,7 +203,9 @@ export default function StorefrontPage({ addToCart }) {
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
         </svg>
-        <input className="input" type="text" placeholder="Search products…"
+        <input className="input" type="text" id="product-search" name="search"
+          aria-label="Search products"
+          placeholder="Search products…"
           value={query} onChange={e => setQuery(e.target.value)} style={{ maxWidth: 400 }} />
       </div>
 

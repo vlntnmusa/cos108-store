@@ -147,10 +147,10 @@ export default function AdminDashboard() {
                 { key: 'image_url',   label: 'Image URL',  type: 'text',   required: false },
               ].map(f => (
                 <div key={f.key} className="form-group">
-                  <label className="label">{f.label}</label>
+                  <label className="label" htmlFor={`admin-${f.key}`}>{f.label}</label>
                   {f.type === 'area'
-                    ? <textarea className="input" rows={2} value={form[f.key]} onChange={e => setForm(p => ({ ...p, [f.key]: e.target.value }))} />
-                    : <input className="input" type={f.type} step={f.type === 'number' && f.key === 'price' ? '0.01' : undefined}
+                    ? <textarea id={`admin-${f.key}`} name={f.key} className="input" rows={2} value={form[f.key]} onChange={e => setForm(p => ({ ...p, [f.key]: e.target.value }))} />
+                    : <input id={`admin-${f.key}`} name={f.key} className="input" type={f.type} step={f.type === 'number' && f.key === 'price' ? '0.01' : undefined}
                         value={form[f.key]} required={f.required}
                         onChange={e => setForm(p => ({ ...p, [f.key]: e.target.value }))} />
                   }
