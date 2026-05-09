@@ -172,3 +172,18 @@ input, select, textarea { font-family: inherit; }
 /* ── Empty state ─────────────────────────────────────────────────────────── */
 .empty { text-align: center; padding: 80px 24px; color: var(--text-2); }
 .empty-icon { font-size: 48px; margin-bottom: 16px; opacity: .4; }
+/* ── Dark Mode contrast fixes ────────────────────────────────────────────── */
+html[data-theme="dark"] .badge-success  { background: rgba(48,209,88,.15);  color: #30D158; }
+html[data-theme="dark"] .badge-admin    { background: rgba(255,159,10,.15); color: #FF9F0A; }
+html[data-theme="dark"] .badge-cashier  { background: rgba(10,132,255,.15); color: #409CFF; }
+html[data-theme="dark"] .badge-customer { background: rgba(48,209,88,.15);  color: #30D158; }
+
+/* Fix prices/accent text inside cards */
+html[data-theme="dark"] .card p   { color: var(--text-1) !important; }
+html[data-theme="dark"] .card h3  { color: var(--text-1) !important; }
+html[data-theme="dark"] .card span { color: inherit; }
+
+/* Nav icons and text */
+html[data-theme="dark"] nav a     { color: var(--text-2) !important; }
+html[data-theme="dark"] header *  { color: var(--text-1); }
+html[data-theme="dark"] header svg { stroke: var(--text-1); }
