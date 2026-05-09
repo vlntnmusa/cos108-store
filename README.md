@@ -2,6 +2,9 @@
 
 A full-stack e-commerce web application built with React and Flask.
 
+## Screenshot
+![COS108 Store](./screenshot.png)
+
 ## Live URLs
 - **Frontend:** https://cos108-store.vercel.app
 - **Backend API:** https://vlntnmusa.pythonanywhere.com
