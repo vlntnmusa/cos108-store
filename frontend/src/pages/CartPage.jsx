@@ -52,7 +52,9 @@ export default function CartPage({ cart, removeFromCart, updateQty, clearCart })
                 <span style={{ minWidth: 28, textAlign: 'center', fontWeight: 600, fontSize: 15 }}>{item.qty}</span>
                 <button className="btn btn-ghost btn-sm"
                   onClick={() => updateQty(item.id, item.qty + 1)}
-                  style={{ width: 32, height: 32, padding: 0, borderRadius: 8, fontSize: 16 }}>+</button>
+                  disabled={item.qty >= item.stock}
+                  style={{ width: 32, height: 32, padding: 0, borderRadius: 8, fontSize: 16,
+                    opacity: item.qty >= item.stock ? 0.3 : 1 }}>+</button>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
                 <span style={{ fontWeight: 700, fontSize: 15, minWidth: 64, textAlign: 'right' }}>

@@ -175,7 +175,7 @@ def delete_product(user, pid):
 # Customer checkout
 @app.route("/api/checkout", methods=["POST"])
 def checkout():
-    user = current_user()
+    user = current_user()  # optional — guest checkout allowed
     data  = request.json
     items = data.get("items", [])
     if not items:

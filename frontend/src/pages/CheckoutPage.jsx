@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { api } from '../utils/api'
+import { useAuth } from '../contexts/AuthContext'
 
 const STEPS = ['Contact', 'Shipping', 'Payment']
 
@@ -15,6 +16,7 @@ function Field({ label, id, ...props }) {
 
 export default function CheckoutPage({ cart, clearCart }) {
   const navigate  = useNavigate()
+  const { user }  = useAuth()
   const [step, setStep]     = useState(0)
   const [loading, setLoading] = useState(false)
   const [error, setError]   = useState('')
@@ -49,7 +51,7 @@ export default function CheckoutPage({ cart, clearCart }) {
     } finally { setLoading(false) }
   }
 
-  // ── Success screen ───────────────────────────────────────────────────────
+  // Empty cart
   if (order) return (
     <div className="page" style={{ maxWidth: 520, minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
       <div className="card fade-up" style={{ width: '100%', textAlign: 'center', padding: '48px 40px' }}>
@@ -90,7 +92,15 @@ export default function CheckoutPage({ cart, clearCart }) {
 
         {/* Left — form */}
         <div className="fade-up">
-          {/* Step indicators */}
+          {/* Guest hint */}
+      {!user && (
+        <div style={{ background: '#EBF4FF', border: '1px solid #BFDBFE', borderRadius: 10,
+          padding: '10px 14px', marginBottom: 20, fontSize: 13, color: '#1E40AF' }}>
+          💡 <Link to="/login" style={{ color: '#1D4ED8', fontWeight: 500 }}>Sign in</Link> to track your orders after purchase.
+        </div>
+      )}
+
+      {/* Step indicators */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 36 }}>
             {STEPS.map((s, i) => (
               <div key={s} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>

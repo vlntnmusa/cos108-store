@@ -96,6 +96,26 @@ export default function AdminDashboard() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 360px', gap: 24, alignItems: 'start' }}>
           <div>
             <p style={{ fontSize: 13, color: 'var(--text-2)', marginBottom: 16 }}>{products.length} products</p>
+            {/* Low stock alerts */}
+            {products.filter(p => p.stock <= 5 && p.stock > 0).length > 0 && (
+              <div style={{ background: '#FFF3E0', border: '1px solid #FFB74D', borderRadius: 10, padding: '12px 16px', marginBottom: 16 }}>
+                <p style={{ fontWeight: 600, fontSize: 13, color: '#E65100', marginBottom: 8 }}>⚠ Low Stock Alert</p>
+                {products.filter(p => p.stock <= 5 && p.stock > 0).map(p => (
+                  <div key={p.id} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, marginBottom: 4 }}>
+                    <span style={{ color: '#BF360C' }}>{p.name}</span>
+                    <span style={{ fontWeight: 600, color: '#E65100' }}>{p.stock} left</span>
+                  </div>
+                ))}
+              </div>
+            )}
+            {products.filter(p => p.stock === 0).length > 0 && (
+              <div style={{ background: '#FFEBEE', border: '1px solid #EF9A9A', borderRadius: 10, padding: '12px 16px', marginBottom: 16 }}>
+                <p style={{ fontWeight: 600, fontSize: 13, color: '#C62828', marginBottom: 8 }}>🚫 Out of Stock</p>
+                {products.filter(p => p.stock === 0).map(p => (
+                  <div key={p.id} style={{ fontSize: 13, color: '#B71C1C', marginBottom: 4 }}>{p.name}</div>
+                ))}
+              </div>
+            )}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {products.map((p, i) => (
                 <div key={p.id} className="card" style={{ display: 'flex', gap: 14, alignItems: 'center', padding: '14px 18px',
