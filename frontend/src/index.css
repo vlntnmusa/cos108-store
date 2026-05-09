@@ -16,17 +16,17 @@ html[data-theme="dark"] {
   --shadow-sm:   0 1px 3px rgba(0,0,0,.5);
   --shadow:      0 4px 16px rgba(0,0,0,.6);
 }
-[data-theme="dark"] body { background: var(--bg); color: var(--text-1); }
-[data-theme="dark"] .card { background: var(--surface); border-color: var(--border); }
-[data-theme="dark"] .input { background: var(--surface-2); border-color: var(--border); color: var(--text-1); }
-[data-theme="dark"] .btn-outline { border-color: var(--border); color: var(--text-1); }
-[data-theme="dark"] .btn-ghost { color: var(--text-1); }
-[data-theme="dark"] .tab-btn { color: var(--text-2); }
-[data-theme="dark"] .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
-[data-theme="dark"] header { background: rgba(28,28,30,0.9) !important; border-bottom-color: var(--border) !important; }
-[data-theme="dark"] a { color: inherit; }
-[data-theme="dark"] p, [data-theme="dark"] span, [data-theme="dark"] h1,
-[data-theme="dark"] h2, [data-theme="dark"] h3 { color: inherit; }
+html[data-theme="dark"] body { background: var(--bg); color: var(--text-1); }
+html[data-theme="dark"] .card { background: var(--surface); border-color: var(--border); }
+html[data-theme="dark"] .input { background: var(--surface-2); border-color: var(--border); color: var(--text-1); }
+html[data-theme="dark"] .btn-outline { border-color: var(--border); color: var(--text-1); }
+html[data-theme="dark"] .btn-ghost { color: var(--text-1); }
+html[data-theme="dark"] .tab-btn { color: var(--text-2); }
+html[data-theme="dark"] .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+html[data-theme="dark"] header { background: rgba(28,28,30,0.9) !important; border-bottom-color: var(--border) !important; }
+html[data-theme="dark"] a { color: inherit; }
+html[data-theme="dark"] p, [data-theme="dark"] span, [data-theme="dark"] h1,
+html[data-theme="dark"] h2, [data-theme="dark"] h3 { color: inherit; }
 
 /* ── Design Tokens ───────────────────────────────────────────────────────── */
 :root {
