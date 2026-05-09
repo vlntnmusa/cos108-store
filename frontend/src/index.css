@@ -1,5 +1,5 @@
 /* ── Dark Mode ───────────────────────────────────────────────────────────── */
-[data-theme="dark"] {
+html[data-theme="dark"] {
   --bg:          #000000;
   --surface:     #1C1C1E;
   --surface-2:   #2C2C2E;
