@@ -1,6 +1,21 @@
 import os, io, csv
 from dotenv import load_dotenv
 load_dotenv()
+
+# COS108 Final Project | Valentina Musa
+# AI-assisted (Claude): generated Flask models, endpoint structure,
+# JWT token helpers, CORS setup, and React component boilerplate.
+#
+# Student contributions:
+# - Debugged CORS preflight errors and port 5000 AirPlay conflict
+# - Fixed Python 3.13/3.12 version mismatch on PythonAnywhere
+# - Designed Apple/Dieter Rams aesthetic (UI/UX decisions)
+# - Implemented dark mode with accessibility contrast fixes
+# - Added low stock badges, quantity modal, guest checkout flow
+# - Ran Lighthouse audits and fixed accessibility (score: 88)
+# - Wrote reflection essay explaining architecture decisions
+# - Deployed and debugged both Vercel and PythonAnywhere
+
 from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
