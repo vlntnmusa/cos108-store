@@ -175,6 +175,32 @@ export default function AdminDashboard() {
       {/* Users */}
       {tab === 'users' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          {/* Add User Form */}
+<div className="card" style={{ padding: '16px 20px', marginBottom: 8 }}>
+  <p style={{ fontWeight: 600, fontSize: 14, marginBottom: 12 }}>Add User</p>
+  <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+    <input className="input" placeholder="Name" id="new-user-name"
+      style={{ flex: 1, minWidth: 140 }}
+      value={newUser.name} onChange={e => setNewUser(p => ({ ...p, name: e.target.value }))} />
+    <input className="input" placeholder="Email" id="new-user-email" type="email"
+      style={{ flex: 2, minWidth: 200 }}
+      value={newUser.email} onChange={e => setNewUser(p => ({ ...p, email: e.target.value }))} />
+    <select className="input" style={{ flex: 1, minWidth: 120 }}
+      value={newUser.role} onChange={e => setNewUser(p => ({ ...p, role: e.target.value }))}>
+      <option value="customer">Customer</option>
+      <option value="cashier">Cashier</option>
+      <option value="admin">Admin</option>
+    </select>
+    <button className="btn btn-primary" onClick={async () => {
+      if (!newUser.email) return
+      try {
+        await api.post('/api/admin/users', newUser)
+        setNewUser({ name: '', email: '', role: 'customer' })
+        load()
+      } catch(e) { setMsg('User already exists') }
+    }}>Add</button>
+  </div>
+</div>
           {users.map((u, i) => (
             <div key={u.id} className="card" style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '14px 20px',
               animation: `fadeUp 0.3s ${i*0.04}s var(--ease) both` }}>
