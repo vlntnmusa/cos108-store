@@ -14,6 +14,7 @@ export default function AdminDashboard() {
   const [form, setForm]         = useState(EMPTY)
   const [editing, setEditing]   = useState(null)
   const [msg, setMsg]           = useState(null)
+  const [newUser, setNewUser] = useState({ name: '', email: '', role: 'customer' })
 
   const load = () => Promise.all([
     api.get('/api/products').then(setProducts),
