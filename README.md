@@ -20,7 +20,8 @@ A full-stack e-commerce web application built with React and Flask.
 
 ## Demo Account
 - Sign in with Google at the live URL
-- First user to sign in gets admin role automatically
+- Admin account: zqu001@mt.feitian.edu (pre-assigned admin role)
+- Students sign in with their own Google account (customer role by default)
 
 ## How to Run Locally
 ```bash
