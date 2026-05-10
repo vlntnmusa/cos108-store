@@ -129,7 +129,7 @@ function ProductCard({ product, onAddClick }) {
           {isLowStock && (
             <div style={{
               position: 'absolute', top: 10, left: 10,
-              background: '#FF9500', color: '#000',
+              background: '#FF9500', color: '#FFFFFF',
               padding: '3px 10px', borderRadius: 999,
               fontSize: 11, fontWeight: 600,
             }}>
