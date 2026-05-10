@@ -46,6 +46,7 @@ export default function App() {
     <AuthProvider>
       <BrowserRouter>
         <Navbar cartCount={cart.reduce((s, i) => s + i.qty, 0)} darkMode={darkMode} toggleDark={toggleDark} />
+      <main>
         <Routes>
           <Route path="/"            element={<StorefrontPage addToCart={addToCart} />} />
           <Route path="/product/:id" element={<ProductDetail addToCart={addToCart} />} />
@@ -56,6 +57,7 @@ export default function App() {
           <Route path="/admin"       element={<ProtectedRoute roles={['admin']}><AdminDashboard /></ProtectedRoute>} />
           <Route path="/pos"         element={<ProtectedRoute roles={['admin','cashier']}><POSPage /></ProtectedRoute>} />
         </Routes>
+        </main>
       </BrowserRouter>
     </AuthProvider>
   )
