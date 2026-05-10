@@ -9,7 +9,7 @@ A full-stack e-commerce web application built with React and Flask.
 | Metric | Score |
 |--------|-------|
 | Performance | 100 |
-| Accessibility | 88 |
+| Accessibility | 95 |
 | Best Practices | 77 |
 | SEO | 100 |
 
