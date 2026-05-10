@@ -8,7 +8,7 @@ A full-stack e-commerce web application built with React and Flask.
 ## Lighthouse Scores
 | Metric | Score |
 |--------|-------|
-| Performance | 100 |
+| Performance | 98 |
 | Accessibility | 95 |
 | Best Practices | 77 |
 | SEO | 100 |
